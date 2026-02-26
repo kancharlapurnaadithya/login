@@ -1,0 +1,101 @@
+:root {
+    --primary: #4285f4;
+    --bg: #f8f9fa;
+    --text: #333;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg);
+    margin: 0;
+    color: var(--text);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+.shadow { box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+.hidden { display: none !important; }
+
+/* Login Card */
+.login-card {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+.btn-google {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-google:hover { background: #f1f1f1; }
+
+/* Profile Design */
+.profile-card {
+    background: white;
+    width: 350px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.profile-header { background: var(--primary); height: 100px; }
+
+.profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 5px solid white;
+    margin-top: -50px;
+}
+
+.profile-content { padding: 20px; }
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 5%;
+    background: white;
+    align-items: center;
+}
+
+.btn-logout {
+    background: #ff4b2b;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Spinner */
+.spinner {
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid var(--primary);
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+    margin: 10px auto;
+}
+
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }

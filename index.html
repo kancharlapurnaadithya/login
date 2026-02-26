@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login | SecureApp</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-light">
+    <div class="container">
+        <div class="login-card shadow">
+            <h2>Welcome Back</h2>
+            <p>Please sign in to access your dashboard</p>
+            <div id="error-message" class="error-box hidden"></div>
+            <button id="google-login-btn" class="btn-google">
+                <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" width="20">
+                <span>Sign in with Google</span>
+            </button>
+            <div id="loader" class="spinner hidden"></div>
+        </div>
+    </div>
+
+    <script type="module">
+        import { auth, provider, signInWithPopup } from './firebase-config.js';
+        import { initAuthCheck } from './auth.js';
+
+        // Automatically redirects to dashboard if already logged in
+        initAuthCheck('login');
+
+        const loginBtn = document.getElementById('google-login-btn');
+        const errorBox = document.getElementById('error-message');
+        const loader = document.getElementById('loader');
+
+        loginBtn.addEventListener('click', async () => {
+            errorBox.classList.add('hidden');
+            loader.classList.remove('hidden');
+            try {
+                await signInWithPopup(auth, provider);
+                // The initAuthCheck listener handles the redirect
+            } catch (error) {
+                errorBox.textContent = error.message;
+                errorBox.classList.remove('hidden');
+                loader.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
