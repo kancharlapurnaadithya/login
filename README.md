@@ -17,13 +17,13 @@ After successful authentication, users are redirected to a personalized dashboar
 ## Login Page
 https://github.com/kancharlapurnaadithya/login/blob/main/LoginPage1.png
 
----
+
 ### Login Page
 
 The login page provides a simple and secure Google Sign-In option.
 
 ### Dashboard Page
-
+https://github.com/kancharlapurnaadithya/login/blob/main/dashbord.png
 
 ### Dashboard Page
 
